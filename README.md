@@ -11,7 +11,7 @@ Into this link:
 
 _my-dnn.de/Nn6c7_
 
-[image:http://www.my-dnn.de/DesktopModules/WatchersNET.UrlShorty/QrCode.ashx?data=Nn6c7]
+![](http://www.my-dnn.de/DesktopModules/WatchersNET.UrlShorty/QrCode.ashx?data=Nn6c7)
 
 ## Features
 * Shrinking of Urls

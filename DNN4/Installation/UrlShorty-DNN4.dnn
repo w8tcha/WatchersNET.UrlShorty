@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>WatchersNET.UrlShorty</name>
+			<description>
+        &lt;h1&gt;WatchersNET.UrlShorty&lt;/h1&gt;
+        &lt;h2&gt;Copyright(c) Ingo Herbote. All rights reserved. (&lt;a href=&quot;http://www.watchersnet.de/UrlShorty&quot;&gt;www.WatchersNET.de&lt;/a&gt;)&lt;/h2&gt; &lt;p&gt;This Module allows users to shorten a long URL and share it, this is a similiar service to web services like bit.ly, tinyurl.com and others. It also contains a Web Service (to be used as an API for creating / retrieving shortened URLs).&lt;/p&gt;
+        &lt;p&gt;&lt;em&gt;For example, you can turn this link: &lt;/em&gt;&lt;/p&gt;
+        &lt;p&gt;http://www.dotnetnuke.com/Community/Forums/tabid/795/forumid/112/threadid/369948/scope/posts/Default.aspx&lt;/p&gt;
+        &lt;p&gt;Into this link: &lt;/p&gt;
+        &lt;p&gt;&lt;em&gt;my-dnn.de/Nn6c7&lt;/em&gt;&lt;/p&gt;
+      </description>
+			<version>01.03.05</version>
+      <resourcefile>Resources.zip</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>UrlShorty</friendlyname>
+					<controls>
+						<control>
+							<title>UrlShorty</title>
+							<src>UrlShorty.ascx</src>
+							<type>View</type>
+						</control>
+            <control>
+              <key>History</key>
+							<title>UrlShorty URL History</title>
+							<src>UrlHistory.ascx</src>
+							<type>Edit</type>
+						</control>
+            <control>
+              <key>ErrorLog</key>
+              <title>UrlShorty Error History</title>
+              <src>ErrorHistory.ascx</src>
+              <type>Edit</type>
+            </control>
+            <control>
+              <key>Settings</key>
+              <title>UrlShorty Settings</title>
+              <src>Settings.ascx</src>
+              <type>Edit</type>
+            </control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>UrlShorty.ascx</name>
+				</file>
+        <file>
+					<name>UrlHistory.ascx</name>
+				</file>
+        <file>
+					<name>404.aspx</name>
+				</file>
+        <file>
+					<name>Redirect.aspx</name>
+				</file>
+        <file>
+          <name>Settings.ascx</name>
+        </file>
+        <file>
+          <name>ErrorHistory.ascx</name>
+        </file>
+        <file>
+          <name>Api.asmx</name>
+        </file>
+         <file>
+          <name>QrCode.ashx</name>
+        </file>
+        <file>
+					<name>WatchersNET.DNN.Modules.UrlShorty.dll</name>
+				</file>
+        <file>
+					<name>ThoughtWorks.QRCode.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+        <file>
+					<name>01.00.01.SqlDataProvider</name>
+				</file>
+        <file>
+          <name>01.01.00.SqlDataProvider</name>
+        </file>
+        <file>
+          <name>01.02.00.SqlDataProvider</name>
+        </file>
+        <file>
+          <name>Uninstall.SqlDataProvider</name>
+        </file>
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

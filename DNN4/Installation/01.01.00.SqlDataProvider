@@ -1,0 +1,145 @@
+﻿IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetRealUrlByUser') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetRealUrlByUser
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetAllErrors') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllErrors
+GO
+
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddErrorLog') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddErrorLog
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_DeleteUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_DeleteUrl
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_DeleteErrors') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_DeleteErrors
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_CountUrls') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_CountUrls
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetUrl
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddClick') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddClick
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_DeleteUrl
+		@short_url varchar(100)
+	AS
+	DELETE FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE short_url = @short_url
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetRealUrlByUser
+		@real_url varchar(200),
+		@created_user varchar(200)
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE real_url = @real_url AND created_user = @created_user
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_DeleteErrors
+	AS
+	truncate table {databaseOwner}{objectQualifier}UrlShortyErrorLog
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllErrors
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}UrlShortyErrorLog
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddErrorLog
+		@ReqTime datetime,
+		@RequestUrl varchar(500),
+		@UserHostAdress varchar(100),
+		@UserAgent varchar(300),
+		@UrlReferrer varchar(300),
+		@Browser varchar(300),
+		@Platform varchar(300)
+	AS
+	SET NOCOUNT ON
+	INSERT INTO {databaseOwner}{objectQualifier}UrlShortyErrorLog
+		(ReqTime,RequestUrl, UserHostAdress, UserAgent, UrlReferrer, Browser, Platform)
+		VALUES
+		(@ReqTime,@RequestUrl, @UserHostAdress, @UserAgent, @UrlReferrer, @Browser, @Platform)
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}UrlShortyErrorLog') and OBJECTPROPERTY(id, N'IsTable') = 1)
+CREATE TABLE {databaseOwner}{objectQualifier}UrlShortyErrorLog(
+	[ReqTime] [datetime] NOT NULL,
+	[RequestUrl] [varchar](500) NOT NULL,
+	[UserHostAdress] [varchar](100) NOT NULL,
+	[UserAgent] [varchar](300) NOT NULL,
+	[UrlReferrer] [varchar](300) NOT NULL,
+	[Browser] [varchar](300) NOT NULL,
+	[Platform] [varchar](300) NOT NULL
+)
+GO
+SET ANSI_PADDING OFF
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}PK_url') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls
+ DROP CONSTRAINT  [PK_url]
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls ALTER COLUMN
+  short_url varchar(100)
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddClick
+		@short_url varchar(100),
+		@short_clicks int
+	AS
+	UPDATE {databaseOwner}{objectQualifier}ShortyUrls
+	SET short_clicks = @short_clicks
+	WHERE short_url = @short_url
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+		@short_url varchar(100),
+		@create_date datetime,
+		@created_by varchar(15),
+		@real_url varchar(200),
+		@created_user varchar(200),
+		@short_clicks int
+	AS
+	SET NOCOUNT ON
+	INSERT INTO {databaseOwner}{objectQualifier}ShortyUrls
+		(short_url, create_date, created_by, real_url, created_user, short_clicks)
+		VALUES
+		(@short_url, @create_date, @created_by, @real_url, @created_user, @short_clicks)
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_CountUrls
+		@short_url varchar(100)
+	AS
+	SELECT COUNT(*) 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE short_url = @short_url
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetUrl
+		@short_url varchar(100)
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE short_url = @short_url

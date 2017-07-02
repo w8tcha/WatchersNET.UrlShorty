@@ -1,0 +1,130 @@
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop Existing Stored Procedures **/
+
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_CountUrls') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_CountUrls
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetUrl
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetRealUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetRealUrl
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetAllUrls') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllUrls
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_GetAllUserUrls') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllUserUrls
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+GO
+
+/** Create Stored Procedures **/
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_CountUrls
+		@short_url varchar(5)
+	AS
+	SELECT COUNT(*) 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE short_url = @short_url
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetUrl
+		@short_url varchar(5)
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE short_url = @short_url
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetRealUrl
+		@real_url varchar(200)
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE real_url = @real_url
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllUrls
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_GetAllUserUrls
+		@created_user varchar(200)
+	AS
+	SELECT * 
+	FROM  {databaseOwner}{objectQualifier}ShortyUrls
+	WHERE created_user = @created_user
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+		@short_url varchar(5),
+		@create_date datetime,
+		@created_by varchar(15),
+		@real_url varchar(200),
+		@created_user varchar(200)
+	AS
+	SET NOCOUNT ON
+	INSERT INTO {databaseOwner}{objectQualifier}ShortyUrls
+		(short_url, create_date, created_by, real_url, created_user)
+		VALUES
+		(@short_url, @create_date, @created_by, @real_url, @created_user)
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+/** Create Tables **/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}ShortyUrls') and OBJECTPROPERTY(id, N'IsTable') = 1)
+CREATE TABLE {databaseOwner}{objectQualifier}ShortyUrls(
+	[short_url] [varchar](5) NOT NULL,
+	[create_date] [datetime] NOT NULL,
+	[created_by] [varchar](15) NOT NULL,
+	[real_url] [varchar](200) NOT NULL,
+	[created_user] [varchar](200) NOT NULL) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls ADD  CONSTRAINT [DF_url_create_date]  DEFAULT (getdate()) FOR [create_date]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

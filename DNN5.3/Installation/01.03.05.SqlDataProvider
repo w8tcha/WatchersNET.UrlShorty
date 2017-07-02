@@ -1,0 +1,12 @@
+﻿ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls ALTER COLUMN
+  real_url varchar(500)
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}PK_url') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls
+  DROP CONSTRAINT PK_url
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls ALTER COLUMN
+  short_url varchar(100)
+GO

@@ -1,0 +1,22 @@
+﻿IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_UpdateUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_UpdateUrl
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_UpdateUrl
+		@short_url varchar(100),
+		@create_date datetime,
+		@created_by varchar(15),
+		@real_url varchar(200),
+		@created_user varchar(200),
+		@short_clicks int
+	AS
+	SET NOCOUNT ON
+	UPDATE {databaseOwner}{objectQualifier}ShortyUrls SET
+	    short_url=@short_url, 
+		create_date=@create_date,
+		created_by=@created_by,
+		real_url=@real_url,
+		created_user=@created_user,
+		short_clicks=@short_clicks
+	WHERE
+		short_url=@short_url

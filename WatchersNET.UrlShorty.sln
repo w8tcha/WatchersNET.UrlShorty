@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetNuke 4", "DotNetNuke 4", "{F98634E8-EDAF-4911-A128-B96C0ABFD984}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetNuke 5.3.x", "DotNetNuke 5.3.x", "{99CAC07E-4A0F-4BA5-A7E5-1F0420B92A5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetNuke 6", "DotNetNuke 6", "{D5888CCC-2398-4735-BAED-7181ADC49D98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchersNET.UrlShorty_DNN4", "DNN4\WatchersNET.UrlShorty_DNN4.csproj", "{6101D278-8F2A-43F3-AB31-429E57C78ABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchersNET.UrlShorty_DNN53", "DNN5.3\WatchersNET.UrlShorty_DNN53.csproj", "{296DC931-84CF-4B55-8FBA-27C4101477C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRCodeLib", "QrCode\QRCodeLib.csproj", "{E98126B2-AF17-4783-96B9-856D6744DCA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatchersNET.UrlShorty_DNN6", "DNN6\WatchersNET.UrlShorty_DNN6.csproj", "{701C024D-69F5-4DED-B5DA-8198580D6272}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deploy|Any CPU = Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296DC931-84CF-4B55-8FBA-27C4101477C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E98126B2-AF17-4783-96B9-856D6744DCA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Deploy|Any CPU.ActiveCfg = Deploy|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Deploy|Any CPU.Build.0 = Deploy|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701C024D-69F5-4DED-B5DA-8198580D6272}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6101D278-8F2A-43F3-AB31-429E57C78ABE} = {F98634E8-EDAF-4911-A128-B96C0ABFD984}
+		{296DC931-84CF-4B55-8FBA-27C4101477C8} = {99CAC07E-4A0F-4BA5-A7E5-1F0420B92A5B}
+		{701C024D-69F5-4DED-B5DA-8198580D6272} = {D5888CCC-2398-4735-BAED-7181ADC49D98}
+	EndGlobalSection
+EndGlobal

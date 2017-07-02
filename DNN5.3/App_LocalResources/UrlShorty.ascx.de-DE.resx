@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.TrayLargeIcon" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="$this.TrayAutoArrange" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System" name="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.DefaultModifiers" type="System.CodeDom.MemberAttributes, System">
+    <value>Private</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;WatchersNET.UrlShorty&lt;/h1&gt;
+&lt;h2&gt;Copyright(c) Ingo Herbote. All rights reserved. (&lt;a href="http://www.watchersnet.de/UrlShorty"&gt;www.WatchersNET.de&lt;/a&gt;)&lt;/h2&gt; &lt;p&gt;This Module allows users to shorten a long URL and share it, this is a similiar service to web services like bit.ly, tinyurl.com and others&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;For example, you can turn this link: &lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;http://www.dotnetnuke.com/Community/Forums/tabid/795/forumid/112/threadid/369948/scope/posts/Default.aspx&lt;/p&gt;
+&lt;p&gt;Into this link: &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;my-dnn.de/Nn6c7&lt;/em&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="btnSubmit.Text" xml:space="preserve">
+    <value>URL Verkürzen</value>
+  </data>
+  <data name="lblLinkInfo.Text" xml:space="preserve">
+    <value>Ihre Neue verkürzte URL ist:</value>
+  </data>
+  <data name="ShortText.Text" xml:space="preserve">
+    <value>Verkürzen Sie Ihre links hier...</value>
+  </data>
+  <data name="Caption.Text" xml:space="preserve">
+    <value>Komplette Liste ihrer verkürzten URLs.</value>
+  </data>
+  <data name="Columns.Text" xml:space="preserve">
+    <value>'Clicked', 'Echte-URL','Kurze-URL','Erstellt','Erstellt'</value>
+  </data>
+  <data name="NoRecords.Text" xml:space="preserve">
+    <value>Sie haben bisher keine Kurz-URLs erstellt.</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="btnCustomize.Text" xml:space="preserve">
+    <value>Anpassen</value>
+  </data>
+  <data name="ErrorTitle.Text" xml:space="preserve">
+    <value>Warnung</value>
+  </data>
+  <data name="lblDialogInfo.Text" xml:space="preserve">
+    <value>Die gewünschte URL ist bereits in Benutzung. Bitte definiern Sie eine andere URL oder klicken Sie auf Abbruch, um eine normale Kurz URL zu verwenden.</value>
+  </data>
+  <data name="lblDialogInfoCopy.Text" xml:space="preserve">
+    <value>Die URL '{0}', wurde erfolgreich in die Zwischenablage kopiert.</value>
+  </data>
+  <data name="btnDeleteUrl.Text" xml:space="preserve">
+    <value>Gewählte URL Löschen</value>
+  </data>
+  <data name="btnEditurl.Text" xml:space="preserve">
+    <value>Gewählte URL bearbeiten</value>
+  </data>
+  <data name="btnEditUrlCancel.Text" xml:space="preserve">
+    <value>Abbruch</value>
+  </data>
+  <data name="btnEditUrlNow.Text" xml:space="preserve">
+    <value>Aktualisierte URL speichern</value>
+  </data>
+  <data name="lblHeaderUpdate.Text" xml:space="preserve">
+    <value>Exestierende URL Aktualisieren</value>
+  </data>
+  <data name="AnalyticsDescription.Text" xml:space="preserve">
+    <value>Füllen Sie die Felder unten aus. Kampagnenquelle, Kampagnenmedium und Kampagnenname müssen stets angegeben werden.</value>
+  </data>
+  <data name="AnalyticsHeader.Text" xml:space="preserve">
+    <value>Google Analytics URL-Erstellung</value>
+  </data>
+  <data name="CampaignContent.Text" xml:space="preserve">
+    <value>Verwendung zur Unterscheidung von Anzeigen</value>
+  </data>
+  <data name="CampaignContentLabel.Text" xml:space="preserve">
+    <value>Kampagnen-Content:</value>
+  </data>
+  <data name="CampaignMedium.Text" xml:space="preserve">
+    <value>Marketingmedium: CPC, Banner, E-Mail</value>
+  </data>
+  <data name="CampaignMediumLabel.Text" xml:space="preserve">
+    <value>Kampagnen Medium*:</value>
+  </data>
+  <data name="CampaignName.Text" xml:space="preserve">
+    <value>Produkt, Promotion-Code oder Slogan</value>
+  </data>
+  <data name="CampaignNameLabel.Text" xml:space="preserve">
+    <value>Kampagnenname*:</value>
+  </data>
+  <data name="CampaignSource.Text" xml:space="preserve">
+    <value>Verweis: google, citysearch, newsletter4</value>
+  </data>
+  <data name="CampaignSourceLabel.Text" xml:space="preserve">
+    <value>Kampagne Quelle*:</value>
+  </data>
+  <data name="CampaignTerm.Text" xml:space="preserve">
+    <value>Erkennung der bezahlten Keywords</value>
+  </data>
+  <data name="CampaignTermLabel.Text" xml:space="preserve">
+    <value>Kampagnenbegriff:</value>
+  </data>
+  <data name="Other.Text" xml:space="preserve">
+    <value>Andere, Unterhalb eingeben</value>
+  </data>
+</root>

@@ -1,0 +1,36 @@
+﻿IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddClick') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddClick
+GO
+
+IF  EXISTS (SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}{objectQualifier}ShortyUrls_AddUrl') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+DROP PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+GO
+
+
+ALTER TABLE {databaseOwner}{objectQualifier}ShortyUrls ADD 
+  short_clicks int
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddClick
+		@short_url varchar(5),
+		@short_clicks int
+	AS
+	UPDATE {databaseOwner}{objectQualifier}ShortyUrls
+	SET short_clicks = @short_clicks
+	WHERE short_url = @short_url
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}ShortyUrls_AddUrl
+		@short_url varchar(5),
+		@create_date datetime,
+		@created_by varchar(15),
+		@real_url varchar(200),
+		@created_user varchar(200),
+		@short_clicks int
+	AS
+	SET NOCOUNT ON
+	INSERT INTO {databaseOwner}{objectQualifier}ShortyUrls
+		(short_url, create_date, created_by, real_url, created_user, short_clicks)
+		VALUES
+		(@short_url, @create_date, @created_by, @real_url, @created_user, @short_clicks)
+GO

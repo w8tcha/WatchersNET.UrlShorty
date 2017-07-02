@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="language" content="en" />
+    <title>Release Notes</title>
+  </head>
+  <body>
+  <p><strong>To get the Module running you need Access to the IIS Manager!</strong></p>
+  <ol>
+    <li><strong>Open Internet Service Manager</strong> - From your server's desktop, launch the Internet Services Manager (usually located at Start-&gt;Programs-&gt;Administrative Tools-&gt;Internet Services Manager)</li>
+    <li>Click the + to the left of the server name</li>
+    <li>Right-click on &quot;DotNetNuke&quot; (or whatever you may have renamed your DNN App), and click on &quot;Properties&quot;</li>
+    <li><strong>Locate the Custom Errors Tab</strong> - Click on the Custom Errors tab (See Image below)<br />
+    <img src="http://www.watchersnet.de/Portals/0/screenshots/dnn/Choice404.png" /></li>
+    <li>Click on the 404 HTTP Error then click &quot;Edit Properties&quot;.<br />
+    <img src="http://www.watchersnet.de/Portals/0/screenshots/dnn/Choice404Url.png" /></li>
+    <li>Use Message Type URL and Enter <strong>/DesktopModules/WatchersNET.UrlShorty/Redirect.aspx</strong> as URL and click OK. Keep clicking OK to dismiss the windows, then close the IIS window.</li>
+  </ol>
+  </body>
+</html>

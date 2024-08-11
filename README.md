@@ -11,8 +11,6 @@ Into this link:
 
 _domain.com/Nn6c7_
 
-![](http://www.my-dnn.de/DesktopModules/WatchersNET.UrlShorty/QrCode.ashx?data=Nn6c7)
-
 ## Features
 * Shrinking of Urls
 * Use of customized Short URLs (Can be disabled)

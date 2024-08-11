@@ -9,7 +9,7 @@ _http://www.dotnetnuke.com/Community/Forums/tabid/795/forumid/112/threadid/36994
 
 Into this link: 
 
-_my-dnn.de/Nn6c7_
+_domain.com/Nn6c7_
 
 ![](http://www.my-dnn.de/DesktopModules/WatchersNET.UrlShorty/QrCode.ashx?data=Nn6c7)
 

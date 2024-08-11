@@ -30,14 +30,3 @@ _my-dnn.de/Nn6c7_
 * 404 Error Logging
 * Web Service (to be used as an API for creating / retrieving shortened URLs)
 * Option to Append Google Anaylytics Url Parameter
-
-**Screenshots**
-![](http://www.watchersnet.de/Portals/0/screenshots/dnn/UrlShorty.png)
-![](http://www.watchersnet.de/Portals/0/screenshots/dnn/UrlShortyCustomize.png)
-![](http://www.watchersnet.de/Portals/0/screenshots/dnn/UrlShortyAnalyticsBuilder.png)
-![](http://www.watchersnet.de/Portals/0/screenshots/dnn/UrlShortyHistory.png)
-![](http://www.watchersnet.de/Portals/0/screenshots/dnn/UrlShorty404.png)
-
-**Demo:**
-[Demo Site](http://www.my-dnn.de/UrlShorty.aspx)
-[Webservice](http://www.my-dnn.de/DesktopModules/WatchersNET.UrlShorty/API.asmx)
